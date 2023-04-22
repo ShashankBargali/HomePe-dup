@@ -20,7 +20,7 @@ const topBar = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 30,
         position: 'absolute',
-        zIndex: 1,
+        zIndex: 2,
         backgroundColor: '#023057',
         elevation: 3,
         shadowColor: 'rgba(0,0,0,0.3)'
@@ -31,7 +31,8 @@ const topBar = StyleSheet.create({
         height: 30,
         width: 35,
         position: 'absolute',
-        left: 30
+        left: 30,
+        padding: 20
     },
     burg: {
         height: 2,
@@ -69,8 +70,8 @@ const topsStyles = StyleSheet.create({
 
 const midsStyles = StyleSheet.create({
     card: {
-        backgroundColor: '#00ebc0',
-        borderRadius: 30,
+        backgroundColor: '#00baf2',
+        borderRadius: 10,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -96,12 +97,12 @@ const ftrStyles = StyleSheet.create({
     iconImg: {
         width: '100%', 
         height: '100%', 
-        tintColor: '#00baf2'
+        tintColor: '#00baf2',
     },
     iconImgLg: {
         width: '100%', 
         height: '100%', 
-        tintColor: 'white'
+        tintColor: '#00baf2',
     },
     ftrOptn:{
         fontSize: 10, 
@@ -110,8 +111,9 @@ const ftrStyles = StyleSheet.create({
         width: 67
     },
     iconCtrLg: {
-        backgroundColor: '#0f4a8a',
-        borderRadius: 10,
+        backgroundColor: '#fff',
+        elevation: 2,
+        borderRadius: 60,
         width: 112, 
         height: 112,
         padding: 20

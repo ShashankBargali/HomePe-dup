@@ -10,12 +10,14 @@ import amtStyles from './HomePeStyles/AmntInpStyles'
 import balsStyles from './HomePeStyles/BalanceStyles'
 import sendStyles from './HomePeStyles/SendPageStyles'
 import loginStyles from './HomePeStyles/LoginStyles'
+import sideBarSt from './HomePeStyles/SideBarStyles'
 
 const styles = StyleSheet.create({
     ctrStyles,
     txtStyles,
     ftrStyles,
     imgStyles,
+    sideBarSt,
     topBar,
     topsStyles,
     midsStyles,

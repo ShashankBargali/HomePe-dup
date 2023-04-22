@@ -3,12 +3,11 @@ import { StyleSheet } from 'react-native'
 const loginStyles = StyleSheet.create({
     container: {
         display: 'flex',
-        // justifyContent: 'center',
         alignItems: 'center',
         marginTop: 100,
         margin: 20,
         paddingTop: 50,
-        padding: 20,
+        padding: 50,
         elevation: 1,
         shadowColor: 'rgba(0,0,0,0.3)',
         borderRadius: 20

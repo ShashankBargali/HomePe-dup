@@ -1,12 +1,7 @@
-import { View, ActivityIndicator, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 const Loader = () => {
-    // return (
-    //     <View style={[styles.ctrStyles.fjCenter, styles.ctrStyles.fullContainer]}>
-    //         <ActivityIndicator size={100} color="#008068" />
-    //     </View>
-    // )
     const [loader, setLoader] = useState(0)
 
     useEffect(() => {

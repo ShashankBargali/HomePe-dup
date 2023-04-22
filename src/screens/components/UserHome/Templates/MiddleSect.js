@@ -10,6 +10,7 @@ const MiddleSect = () => {
   const [bankDetails, setBankDetails] = useState({ name: '', acno: '' })
   const [loader, setLoader] = useState(false)
   const [bnk, setBnk] = useState(false)
+  
   useEffect(() => {
     return (() => {
       setBnk(false)
@@ -27,11 +28,10 @@ const MiddleSect = () => {
   const getUserBankDetails = async () => {
     const data = await context.fetchBankDetails();
     setBankDetails({ name: data.response.name, acno: data.response.acno })
-    console.log(data)
     setLoader(false)
     setTimeout(() => {
       setBnk(false)
-    }, 60000);
+    }, 6000);
   }
   return (
     <View style={[styles.ctrStyles.sectContainer, styles.ctrStyles.faCenter, styles.ctrStyles.fjCenter]}>

@@ -34,7 +34,7 @@ const txtStyles = StyleSheet.create({
     },
     desc: {
         color: 'black',
-        fontSize: 10
+        fontSize: 9
     },
     fontUbuntu:{
         fontFamily: 'Ubuntu-Regular'

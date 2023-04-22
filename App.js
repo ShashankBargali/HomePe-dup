@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer'
+// import { createDrawerNavigator } from '@react-navigation/drawer'
 import React, { useState } from 'react'
 import QrScanner from './src/screens/pages/QrScanner';
 import UpiPin from './src/screens/pages/UpiPin';
@@ -14,9 +14,10 @@ import Passbook from './src/screens/pages/Passbook';
 import NotCon from './src/screens/pages/NotCon';
 import Send from './src/screens/pages/Send';
 import Login from './src/screens/pages/Login';
+import Test from './src/screens/pages/Test';
 
 const Stack = createNativeStackNavigator();
-const Drawer = createDrawerNavigator();
+// const Drawer = createDrawerNavigator();
 
 const App = () => {
     const url = 'http://192.168.43.23:5000';
@@ -191,23 +192,21 @@ const App = () => {
     return (
         <NavigationContainer>
             <AppContext.Provider value={{ authToken, setAuthToken, upiId, setUpiId, amount, setAmount, urlParser, login, sendMoney, checkPin, fetchBalance, qrCode, rcntTrnx, fetchBankDetails }}>
-                <Drawer.Navigator>
-                    <Drawer.Screen name='Scanner' component={QrScanner} />
-                </Drawer.Navigator>
-                <Stack.Navigator initialRouteName='Home'>
+                <Stack.Navigator initialRouteName='Login'>
+                    {
+                        //This must be removed -->
+                    }
+                    <Stack.Screen component={Test} name="Test" options={{
+                        title: "Login to HomePe",
+                        headerTitleAlign: 'center',
+                        headerShown: false
+                    }} />
                     <Stack.Screen component={Login} name="Login" options={{
                         title: "Login to HomePe",
                         headerTitleAlign: 'center',
                         headerShown: false
                     }} />
                     <Stack.Screen component={UserHome} name="Home" options={{
-                        // title: "HomePe",
-                        // headerTitleAlign: 'center',
-                        // headerTitleStyle: {
-                        //     fontFamily: 'Nunito-SemiBold',
-                        //     fontSize: 30,
-                        //     color: 'rgb(0,0,120)'
-                        // }
                         headerShown: false
                     }} />
                     <Stack.Screen component={QrScanner} name="QrScanner" options={{
@@ -216,7 +215,7 @@ const App = () => {
                         }
                     }} />
                     <Stack.Screen component={UpiPin} name="UpiPin" options={{
-                        title: 'Enter your UPI Pin to transfer'
+                        title: 'Enter your UPI Pin'
                     }} />
 
                     <Stack.Screen component={Send} name="Send" options={{

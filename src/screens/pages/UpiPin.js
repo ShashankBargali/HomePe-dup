@@ -10,7 +10,7 @@ import Loader from '../components/General/Loader'
 
 
 const UpiPin = ({ route, navigation }) => {
-  
+
   const context = useContext(AppContext)
   const [loader, setLoader] = useState(false)
   const [pin, setPin] = useState('')
@@ -19,7 +19,7 @@ const UpiPin = ({ route, navigation }) => {
     setLoader(true)
     const data = await context.checkPin(context.authToken);
     const userPin = data.response;
-    if(data.response === 'Server_error'){
+    if (data.response === 'Server_error') {
       navigation.navigate('Error')
       return;
     }
@@ -44,16 +44,18 @@ const UpiPin = ({ route, navigation }) => {
 
   const { upiId, amount } = context;
   return (
-    <>
+    <View>
       {loader ? <Loader /> :
-        <View style={[styles.ctrStyles.fullContainer, styles.ctrStyles.faCenter, styles.ctrStyles.fjCenter]}>
+        <View style={[styles.ctrStyles.fullContainer, styles.ctrStyles.faCenter, styles.ctrStyles.evenly]}>
           <TopBar />
           <MidBar info={{ upiId, amount }} />
-          <InpBar pin={pin} checkPin={checkPin} />
-          <UpiBtn handleBtn={handleBtn} />
+          <View style={{height: '100%', width: '100%', justifyContent: 'space-evenly', alignItems: 'center', marginTop: 40}}>
+            <InpBar pin={pin} checkPin={checkPin} />
+            <UpiBtn handleBtn={handleBtn} />
+          </View>
         </View>
       }
-    </>
+    </View>
   )
 }
 

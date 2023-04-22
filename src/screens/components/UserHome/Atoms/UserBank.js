@@ -12,10 +12,10 @@ const UserBank = (props) => {
     return (
         <View style={styles.midsStyles.card}>
             <View>
-                <Text style={[styles.txtStyles.mainHead, styles.txtStyles.fontFiraCode, styles.txtStyles.themeTxt, styles.txtStyles.fontUpCase]}>{bank}</Text>
+                <Text style={[styles.txtStyles.mainHead, styles.txtStyles.fontNunito, styles.txtStyles.whiteTxt, styles.txtStyles.fontUpCase]}>{bank}</Text>
             </View>
             <View style={[styles.ctrStyles.flexRow, styles.ctrStyles.faCenter, styles.ctrStyles.spaceBetween, styles.ctrStyles.container]}>
-                <Text style={styles.txtStyles.head3}>* * * * {acnoSliced}</Text>
+                <Text style={[styles.txtStyles.head3, styles.txtStyles.whiteTxt]}>* * * * {acnoSliced}</Text>
                 <TouchableOpacity onPress={handlePress}>
                     <Text style={[styles.txtStyles.head2, styles.txtStyles.linkTxt]}>Change Upi Pin</Text>
                 </TouchableOpacity>

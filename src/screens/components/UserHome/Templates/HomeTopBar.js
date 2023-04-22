@@ -1,9 +1,9 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import styles from '../../../../assets/styles'
 
-const HomeTopBar = () => {
-  const [active, setActive] = useState(false)
+const HomeTopBar = (props) => {
+  const { active, setActive } = props
   return (
     <View style={styles.topBar.container}>
       {active ?
@@ -18,10 +18,8 @@ const HomeTopBar = () => {
           <View style={styles.topBar.burg}></View>
         </TouchableOpacity>
       }
-      <Text style={[styles.txtStyles.mainHead,styles.txtStyles.whiteTxt, styles.txtStyles.fontUbuntu]}>HomePe</Text>
-      {/* <TouchableOpacity>
-        <Image style={[styles.ftrStyles.iconImg, { height: 50, width: 50, tintColor: '#fff'}]} source={require('../../../../assets/Images/profileUser.png')} />
-      </TouchableOpacity> */}
+      <Text style={[styles.txtStyles.mainHead, styles.txtStyles.whiteTxt, styles.txtStyles.fontUbuntu]}>HomePe</Text>
+
     </View>
   )
 }

@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { Image, Text, TouchableOpacity } from 'react-native'
 import React, { useContext } from 'react'
 import styles from '../../../../assets/styles'
 import { useNavigation } from '@react-navigation/native'
@@ -15,11 +15,10 @@ const LogOutSect = () => {
         navigation.navigate('Login')
     }
     return (
-        <View style={styles.ctrStyles.sectContainer}>
-            <TouchableOpacity style={styles.btnStyles.themeBtn} onPress={LogOut} >
-                <Text style={[styles.txtStyles.head3, styles.txtStyles.txtCenter, styles.txtStyles.whiteTxt]}>LogOut</Text>
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.sideBarSt.sideBarSect} onPress={LogOut}>
+            <Image style={[styles.ftrStyles.iconImg, { height: 30, width: 30, tintColor: '#fff', position: 'absolute', left: 20 }]} source={require('../../../../assets/Images/signOut.png')} />
+            <Text style={[styles.txtStyles.head3, styles.txtStyles.whiteTxt, styles.txtStyles.fontUbuntu]}>Log Out</Text>
+        </TouchableOpacity>
     )
 }
 

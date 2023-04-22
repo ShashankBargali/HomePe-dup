@@ -9,7 +9,6 @@ import Loader from '../components/General/Loader'
 
 const Login = ({ navigation }) => {
 
-
     useEffect(() => {
         BackHandler.addEventListener('hardwareBackPress', disableBackButton);
         return () => {
@@ -34,6 +33,7 @@ const Login = ({ navigation }) => {
         setLoader(true);
         const data = await context.login(acno, code)
         if (data.success === true) {
+            setCode('')
             try {
                 setLoader(false)
                 await AsyncStorage.setItem("authToken", data.response)
@@ -41,6 +41,12 @@ const Login = ({ navigation }) => {
             } catch (error) {
                 console.log(err)
             }
+        }
+        else if (data.response === 'Server_error') {
+            setLoader(false)
+            Alert.alert("Network Problem", "Please check the internet connection before trying again!")
+            return;
+            
         }
         else {
             setLoader(false)
@@ -100,7 +106,7 @@ const Login = ({ navigation }) => {
                                     width: 15,
                                     height: 15,
                                     borderRadius: 25,
-                                    backgroundColor: 'black',
+                                    backgroundColor: '#0259a1',
                                 }}></View>}
                                 maskDelay={200}
                                 password={true}
